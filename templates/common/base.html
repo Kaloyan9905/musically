@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>My Music App</title>
+    <!-- Static Load -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+
+<body>
+<div id="box">
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <img src="/images/headphones.png" alt="headphones">
+            <a href="{% url 'home page' %}">Home</a><ul></ul>
+            <ul>
+                <!--Only for user with created profile-->
+                <li><a href="#">Create Album</a></li>
+                <li><a href="{% url 'music upload' %}">Add Music</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End Navigation Bar -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            &copy;Musically Team 2023. All rights reserved.
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</div>
+</body>
+</html>

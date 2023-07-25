@@ -1,0 +1,13 @@
+<!-- music_upload.html -->
+<form method="post" enctype="multipart/form-data" action="{% url 'music upload' %}">
+    {% csrf_token %}
+    <label>Title:</label>
+    <input type="text" name="title" required><br>
+    <label>Artist:</label>
+    <input type="text" name="artist" required><br>
+    <label>Image URL:</label>
+    <input type="text" name="image" required><br>
+    <label>Audio files (MP3 only):</label>
+    <input type="file" name="audio_file" accept="audio/mpeg" multiple required><br>
+    <button type="submit">Upload</button>
+</form>

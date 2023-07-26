@@ -21,4 +21,16 @@ class LogoutUserView(auth_views.LogoutView):
     next_page = reverse_lazy('start page')
 
 
+class ProfileDetailView(views.DetailView):
+    template_name = 'profile/profile-details.html'
 
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+class ProfileDeleteView(views.DeleteView):
+    template_name = 'profile/profile-delete.html'
+    success_url = reverse_lazy('start page')
+
+    def get_object(self, queryset=None):
+        return self.request.user

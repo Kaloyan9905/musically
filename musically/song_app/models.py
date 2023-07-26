@@ -20,6 +20,7 @@ class SongFile(models.Model):
 
     song_image_url = models.URLField(
         null=False,
+        blank=False,
     )
 
     def __str__(self):

@@ -21,3 +21,4 @@ def home_page(request):
 
     return render(request, 'common/home-with-profile.html', context)
 
+

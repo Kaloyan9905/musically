@@ -1,25 +1,24 @@
-{% block music_player %}
+{% extends 'common/base.html' %}
+{% block content %}
 
     <ul>
-        {% for music_file in music_files %}
             <li id="song">
-                <img src="{{ music_file.song_image_url }}" alt="">
+                <img src="{{ song.song_image_url }}" alt="">
 
                 <div class="song-info">
-                    <p id="title">{{ music_file.title }}</p>
-                    <p id="artist">{{ music_file.artist }}</p>
+                    <p id="title">{{ song.title }}</p>
+                    <p id="artist">{{ song.artist }}</p>
                     <div class="song-switch-buttons">
-                        <a href=""><i class="fa-solid fa-backward"></i></a>
-                        <a href=""><i class="fa-solid fa-forward"></i></a>
+                        <a href="{% url 'previous song' song.pk %}"><i class="fa-solid fa-backward"></i></a>
+                        <a href="{% url 'next song' song.pk %}"><i class="fa-solid fa-forward"></i></a>
                     </div>
                 </div>
 
                 <audio controls>
-                    <source src="{{ music_file.audio_file.url }}" type="audio/mpeg">
+                    <source src="{{ song.audio_file.url }}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </li>
-        {% endfor %}
     </ul>
 
 {% endblock %}

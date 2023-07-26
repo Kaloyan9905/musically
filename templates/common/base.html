@@ -26,7 +26,8 @@
                 <!--Only for user with created profile-->
                 <li><a href="#">Create Album</a></li>
                 <li><a href="{% url 'music upload' %}">Add Music</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="{% url 'details profile' %}">Profile</a></li>
+                <li><a href="{% url 'song details' %}">Songs</a></li>
                 <li><a href="{% url 'logout' %}">Log out</a></li>
             </ul>
         </nav>

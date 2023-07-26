@@ -16,6 +16,6 @@ def music_upload(request):
     return render(request, 'music_player/music_upload.html')
 
 
-# def music_list(request):
-#     music_files = SongFile.objects.all()
-#     return render(request, 'music_player/music_list.html', {'music_files': music_files})
+def music_list(request):
+    music_files = SongFile.objects.all()
+    return render(request, 'music_player/music_list.html', {'music_files': music_files})

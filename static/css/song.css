@@ -32,3 +32,8 @@ img {
     border-top-right-radius: 25px;
 }
 
+.song-info div {
+    display: flex;
+    gap: 20px;
+}
+

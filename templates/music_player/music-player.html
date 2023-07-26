@@ -5,10 +5,14 @@
             <li id="song">
                 <img src="{{ music_file.song_image_url }}" alt="">
 
-            <div class="song-info">
-                <p id="title">{{ music_file.title }}</p>
-                <p id="artist">{{ music_file.artist }}</p>
-            </div>
+                <div class="song-info">
+                    <p id="title">{{ music_file.title }}</p>
+                    <p id="artist">{{ music_file.artist }}</p>
+                    <div class="song-switch-buttons">
+                        <a href=""><i class="fa-solid fa-backward"></i></a>
+                        <a href=""><i class="fa-solid fa-forward"></i></a>
+                    </div>
+                </div>
 
                 <audio controls>
                     <source src="{{ music_file.audio_file.url }}" type="audio/mpeg">

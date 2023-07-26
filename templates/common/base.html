@@ -7,6 +7,10 @@
     <title>My Music App</title>
     <!-- Static Load -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 
 <body>
@@ -16,7 +20,8 @@
     <header>
         <nav>
             <img src="/images/headphones.png" alt="headphones">
-            <a href="{% url 'home page' %}">Home</a><ul></ul>
+            <a href="{% url 'home page' %}">Home</a>
+            <ul></ul>
             <ul>
                 <!--Only for user with created profile-->
                 <li><a href="#">Create Album</a></li>

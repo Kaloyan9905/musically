@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+
+    <header>
+        <h1>Delete Song</h1>
+    </header>
+    <div class="container">
+        <p>Are you sure you want to delete "{{ object.title }}"?</p>
+        <form method="post" action="{% url 'delete song' object.pk %}">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+
+
+{% endblock %}

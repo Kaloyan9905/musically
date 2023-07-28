@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+    <!-- music-upload.html -->
+    <form method="post" enctype="multipart/form-data" action="{% url 'music upload' %}">
+        <h1>Add your favourite song here</h1>
+        {% csrf_token %}
+        <label>Title:</label>
+        <input type="text" name="title" required>
+        <label>Artist:</label>
+        <input type="text" name="artist" required>
+        <label>Image URL:</label>
+        <input type="text" name="image" required>
+        <label>Audio files (MP3 only):</label>
+        {#        <input type="file" name="audio_file" accept="audio/mpeg" multiple required>#}
+        <input type="file" name="audio_file" accept="audio/mpeg" multiple required id="fileInput">
+        <label for="fileInput" class="file-label">Choose an audio file</label>
+        <button type="submit" class="upload-button">Upload</button>
+    </form>
+
+{% endblock %}

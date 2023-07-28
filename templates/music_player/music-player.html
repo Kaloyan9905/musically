@@ -9,8 +9,8 @@
                     <p id="title">{{ song.title }}</p>
                     <p id="artist">{{ song.artist }}</p>
                     <div class="song-switch-buttons">
-                        <a href="{% url 'previous song' song.pk %}"><i class="fa-solid fa-backward"></i></a>
-                        <a href="{% url 'next song' song.pk %}"><i class="fa-solid fa-forward"></i></a>
+                        <a href="{% url 'previous song' song.pk %}" id="song_attrs"><i class="fa-solid fa-backward"></i></a>
+                        <a href="{% url 'next song' song.pk %}" id="song_attrs"><i class="fa-solid fa-forward"></i></a>
                     </div>
                 </div>
 

@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('musically.common_app.urls')),
     path('user/', include('musically.auth_app.urls')),
     path('song/', include('musically.song_app.urls')),
+    path('song/', include('musically.album_app.urls')),
 ]
 
 if settings.DEBUG:

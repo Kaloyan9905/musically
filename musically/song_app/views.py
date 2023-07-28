@@ -19,14 +19,14 @@ def music_upload(request):
             audio_file=audio_file,
         )
 
-        return render(request, 'music_player/upload_success.html')
+        return render(request, 'music_player/upload-success.html')
 
-    return render(request, 'music_player/music_upload.html')
+    return render(request, 'music_player/music-upload.html')
 
 
 def music_list(request):
     music_files = SongFile.objects.all()
-    return render(request, 'music_player/music_list.html', {'music_files': music_files})
+    return render(request, 'music_player/music-list.html', {'music_files': music_files})
 
 
 def next_song_view(request, song_id):

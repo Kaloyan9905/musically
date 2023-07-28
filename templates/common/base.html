@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>My Music App</title>
+    <title>Musically</title>
     <!-- Static Load -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet"
@@ -24,10 +24,10 @@
             <ul></ul>
             <ul>
                 <!--Only for user with created profile-->
-                <li><a href="#">Create Album</a></li>
-                <li><a href="{% url 'music upload' %}">Add Music</a></li>
-                <li><a href="{% url 'details profile' %}">Profile</a></li>
                 <li><a href="{% url 'song details' %}">Songs</a></li>
+                <li><a href="{% url 'music upload' %}">Add Music</a></li>
+                <li><a href="{% url 'list songs' %}">Create Album</a></li>
+                <li><a href="{% url 'details profile' %}">Profile</a></li>
                 <li><a href="{% url 'logout' %}">Log out</a></li>
             </ul>
         </nav>

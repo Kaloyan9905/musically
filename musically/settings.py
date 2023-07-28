@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'musically.auth_app',
     'musically.common_app',
     'musically.song_app',
+    'musically.album_app',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,32 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+    <header>
+        <h1>My Song List</h1>
+    </header>
+    <div class="container">
+        <ul class="song-list">
+            {% for song in song_list %}
+                <li class="song">
+                    <img src="{{ song.song_image_url }}" alt="{{ song.title }}">
+                    <div class="song-info">
+                        <div class="song-title">{{ song.title }}</div>
+                        <div class="song-artist">{{ song.artist }}</div>
+                    </div>
+                    <div class="song-actions">
+{#                        <a href="{% url 'add song' song.pk %}">#}
+{#                            <button>Add</button>#}
+{#                        </a>#}
+                        <a href="{% url 'edit song' song.pk %}">
+                            <button>Edit</button>
+                        </a>
+                        <a href="{% url 'delete song' song.pk %}">
+                            <button>Delete</button>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

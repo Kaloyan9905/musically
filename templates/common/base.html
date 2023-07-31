@@ -19,14 +19,14 @@
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <img src="{% static 'images/headphones.png' %}" alt="headphones">
+            <img src="/images/headphones.png" alt="headphones">
             <a href="{% url 'home page' %}">Home</a>
             <ul></ul>
             <ul>
                 <!--Only for user with created profile-->
                 <li><a href="{% url 'song details' %}">Songs</a></li>
                 <li><a href="{% url 'music upload' %}">Add Music</a></li>
-                <li><a href="{% url 'list songs' %}">Available Songs</a></li>
+                <li><a href="{% url 'list songs' %}">Create Album</a></li>
                 <li><a href="{% url 'details profile' %}">Profile</a></li>
                 <li><a href="{% url 'logout' %}">Log out</a></li>
             </ul>

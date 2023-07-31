@@ -1,15 +1,17 @@
 {% extends 'common/base.html' %}
 {% block content %}
 
-    <header>
-        <h1>Edit Song</h1>
-    </header>
-    <div class="container">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Save Changes</button>
-        </form>
-    </div>
+    <form method="post" enctype="multipart/form-data" action="{% url 'edit song' object.pk %}">
+        <h1>Edit song!</h1>
+        {% csrf_token %}
+        {{ form }}
+        <label for="fileInput" class="file-label">Choose an audio file</label>
+        <button type="submit" class="upload-button">Save changes</button>
+    </form>
+
+    <script>
+        let song_link = document.querySelectorAll("form a")[0];
+        song_link.style.display = 'none';
+    </script>
 
 {% endblock %}

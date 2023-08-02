@@ -1,7 +1,10 @@
 {% extends 'common/base.html' %}
 {% block content %}
 
-    <ul>
+    {% if not song %}
+        <h1>No songs added!</h1>
+    {% else %}
+        <ul>
             <li id="song">
                 <img src="{{ song.song_image_url }}" alt="">
 
@@ -19,6 +22,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </li>
-    </ul>
+        </ul>
+    {% endif %}
 
 {% endblock %}

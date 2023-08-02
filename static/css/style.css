@@ -1,12 +1,14 @@
-@import "typography.css";
-@import "home.css";
-@import "login.css";
-@import "create.css";
-@import "catalog.css";
-@import "details.css";
-@import "start.css";
-@import "song.css";
-@import "music-upload.css";
-@import "upload-success.css";
-@import "list-songs.css";
-@import "edit-song.css";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto&display=swap');
+
+@import "common/typography.css";
+@import "common/home.css";
+@import "auth_css/login.css";
+@import "common/create.css";
+@import "common/catalog.css";
+@import "common/details.css";
+@import "auth_css/start.css";
+@import "song/song.css";
+@import "song/music-upload.css";
+@import "song/upload-success.css";
+@import "song/list-songs.css";
+@import "song/edit-song.css";

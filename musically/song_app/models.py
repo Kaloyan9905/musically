@@ -3,7 +3,7 @@ from django.db import models
 
 class SongFile(models.Model):
     title = models.CharField(
-        max_length=100
+        max_length=100,
     )
 
     artist = models.CharField(
@@ -27,5 +27,5 @@ class SongFile(models.Model):
         return self.title
 
 
-
-
+class PersonalSongs(models.Model):
+    pass

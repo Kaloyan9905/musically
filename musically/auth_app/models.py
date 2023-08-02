@@ -17,7 +17,7 @@ class AuthUser(AbstractUser):
 
     username = models.CharField(
         unique=True,
-        max_length=MAX_USERNAME_LEN
+        max_length=MAX_USERNAME_LEN,
     )
 
     first_name = models.CharField(
@@ -37,5 +37,4 @@ class AuthUser(AbstractUser):
 
     saved_songs = models.ManyToManyField(
         SongFile,
-        related_name='saved_by_users',
     )

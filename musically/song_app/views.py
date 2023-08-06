@@ -1,6 +1,7 @@
 from random import choice
 
 from django.contrib.auth import get_user_model
+from django.core import exceptions as exceptions
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.shortcuts import render, redirect
@@ -39,6 +40,17 @@ class SongDeleteView(views.DeleteView):
     success_url = reverse_lazy('list songs')
 
 
+class PersonalSongDeleteView(views.DeleteView):
+    model = SongFile
+    success_url = reverse_lazy('list songs')
+
+    def get(self, request, *args, **kwargs):
+        song = kwargs.get('pk')
+        user_profile, created = UserModel.objects.get_or_create(email=self.request.user.email)
+        user_profile.saved_songs.remove(song)
+        return redirect('personal songs')
+
+
 def music_upload(request):
     if request.method == 'POST' and request.FILES['audio_file']:
         title = request.POST['title']
@@ -59,28 +71,16 @@ def music_upload(request):
 
 
 def next_song_view(request, song_id):
-    # next_song = SongFile \
-    #     .objects \
-    #     .filter(pk__gt=song_id) \
-    #     .order_by('pk') \
-    #     .first()
-    #
-    # if next_song is None:
-    #     next_song = SongFile \
-    #         .objects \
-    #         .order_by('pk') \
-    #         .first()
-
     user_profile = __get_user_profile_by_email(request.user.email)
 
-    next_song = user_profile\
+    next_song = user_profile \
         .saved_songs \
         .filter(pk__gt=song_id) \
         .order_by('pk') \
         .first()
 
     if next_song is None:
-        next_song = user_profile\
+        next_song = user_profile \
             .saved_songs \
             .order_by('pk') \
             .first()
@@ -93,18 +93,6 @@ def next_song_view(request, song_id):
 
 
 def previous_song_view(request, song_id):
-    # previous_song = SongFile \
-    #     .objects \
-    #     .filter(pk__lt=song_id) \
-    #     .order_by('-pk') \
-    #     .first()
-    #
-    # if previous_song is None:
-    #     previous_song = SongFile \
-    #         .objects \
-    #         .order_by('-pk') \
-    #         .first()
-
     user_profile = __get_user_profile_by_email(request.user.email)
 
     previous_song = user_profile \
@@ -146,11 +134,15 @@ def personal_songs(request):
 
 
 def __get_random_song_pk(user_profile):
-    existing_pks = user_profile \
-        .saved_songs \
-        .values_list('pk', flat=True)
+    try:
+        existing_pks = user_profile \
+            .saved_songs \
+            .values_list('pk', flat=True)
 
-    return choice(existing_pks)
+        return choice(existing_pks)
+
+    except IndexError:
+        return None
 
 
 def __get_user_profile_by_email(email):

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from musically.song_app.views import music_upload, next_song_view, previous_song_view, personal_songs, \
-    SongListView, SongEditView, SongDeleteView, SongAddView
+    SongListView, SongEditView, SongDeleteView, SongAddView, PersonalSongDeleteView
 
 urlpatterns = (
     path('upload/', music_upload, name='music upload'),
@@ -12,4 +12,5 @@ urlpatterns = (
     path('add/<int:pk>', SongAddView.as_view(), name='add song'),
     path('edit/<int:pk>/', SongEditView.as_view(), name='edit song'),
     path('delete/<int:pk>/', SongDeleteView.as_view(), name='delete song'),
+    path('delete-personal-song/<int:pk>/', PersonalSongDeleteView.as_view(), name='delete personal song'),
 )

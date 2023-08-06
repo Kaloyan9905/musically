@@ -17,12 +17,14 @@
                         <a href="{% url 'add song' song.pk %}">
                             <button>Add</button>
                         </a>
-                        <a href="{% url 'edit song' song.pk %}">
-                            <button>Edit</button>
-                        </a>
-                        <a href="{% url 'delete song' song.pk %}">
-                            <button>Delete</button>
-                        </a>
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'edit song' song.pk %}">
+                                <button>Edit</button>
+                            </a>
+                            <a href="{% url 'delete song' song.pk %}">
+                                <button>Delete</button>
+                            </a>
+                        {% endif %}
                     </div>
                 </li>
             {% endfor %}

@@ -2,14 +2,14 @@
 {% block content %}
 
 
-    <header>
+    <header id="delete-head">
         <h1>Delete Song</h1>
     </header>
     <div class="container">
-        <p>Are you sure you want to delete "{{ object.title }}"?</p>
-        <form method="post" action="{% url 'delete song' object.pk %}">
+        <p id="delete-song">Are you sure you want to delete "{{ object.title }}"?</p>
+        <form id="delete-form" method="post" action="{% url 'delete song' object.pk %} ">
             {% csrf_token %}
-            <button type="submit">Delete</button>
+            <button id="delete-btn" type="submit">Delete</button>
         </form>
     </div>
 

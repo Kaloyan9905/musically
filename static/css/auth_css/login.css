@@ -9,7 +9,8 @@ fieldset {
     border-color: #2d333b;
     background: #1b1f24;
     box-shadow: 0 2px 2px #131518;
-
+    display: flex;
+    flex-direction: column;
 }
 
 fieldset legend {

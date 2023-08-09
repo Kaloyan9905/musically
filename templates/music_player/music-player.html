@@ -16,6 +16,7 @@
                         <a href="{% url 'next song' song.pk %}" id="song_attrs"><i class="fa-solid fa-forward"></i></a>
                     </div>
                 </div>
+                <a href="{% url 'delete personal song' song.pk %}"><i class="fa-regular fa-trash-can"></i></a>
 
                 <audio controls>
                     <source src="{{ song.audio_file.url }}" type="audio/mpeg">

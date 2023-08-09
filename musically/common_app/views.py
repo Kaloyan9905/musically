@@ -14,13 +14,7 @@ def start_page(request):
 
 
 def home_page(request):
-    music_files = SongFile.objects.all()
-
-    context = {
-        'music_files': music_files,
-    }
-
-    return render(request, 'common/home-with-profile.html', context)
+    return render(request, 'common/home-with-profile.html')
 
 
 def custom_404_view(request, exception):

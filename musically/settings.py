@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-4s%g-$x=c22(0$z+l@0(z=$(hvo@26t4lc9i=qtte-qo$4q^i+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -115,9 +115,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = (
-    BASE_DIR / 'static',
-)
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files_build', 'static')
 
 AUTH_USER_MODEL = 'auth_app.AuthUser'
 LOGIN_REDIRECT_URL = reverse_lazy('home page')

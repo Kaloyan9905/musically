@@ -2,11 +2,12 @@
 
 @import "common/typography.css";
 @import "common/home.css";
-@import "auth_css/login.css";
 @import "common/create.css";
 @import "common/catalog.css";
 @import "common/details.css";
+@import "common/404.css";
 @import "auth_css/start.css";
+@import "auth_css/login.css";
 @import "song/song.css";
 @import "song/music-upload.css";
 @import "song/upload-success.css";

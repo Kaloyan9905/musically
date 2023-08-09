@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from django.urls import reverse_lazy
@@ -14,7 +15,7 @@ SECRET_KEY = 'django-insecure-4s%g-$x=c22(0$z+l@0(z=$(hvo@26t4lc9i=qtte-qo$4q^i+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 

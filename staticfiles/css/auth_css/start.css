@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Lato:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Andika&family=DM+Sans:wght@500&family=Lato:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap");
+
+:root {
+    --white-clr: rgb(221, 221, 221);
+}
+
+/*body,*/
+/*html {*/
+/*  background-image: url("start_page2.jpg");*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  overflow: hidden;*/
+/*} */
+
+
+body,
+html {
+    position: relative;
+    width: 100%;
+    height: 102%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body::after {
+    content: "";
+    background-image: url('https://getwallpapers.com/wallpaper/full/b/2/4/1502344-music-background-wallpaper-2560x1600-for-tablet.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8);
+    z-index: -1;
+}
+
+.head .nav-head #logo {
+    font-size: 54px;
+    font-weight: bold;
+    font-family: "Raleway";
+    text-decoration: none;
+    color: var(--white-clr);
+    margin-left: 6%;
+    margin-right: 5%;
+    font-style: italic;
+}
+
+.head .nav-head ul {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 27px;
+    margin-top: 40px;
+    margin-right: 8%;
+}
+
+.head .nav-head ul li:not(:nth-child(1)) a {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white-clr);
+    font-family: "DM Sans";
+}
+
+.description {
+    margin-left: 8%;
+    width: 30%;
+}
+
+.description h1 {
+    font-size: 70px;
+    color: var(--white-clr);
+    font-family: "DM Sans";
+}
+
+/* button */
+
+.btn {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 1em 2.5em;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all 0.2s;
+    border: none;
+    font-family: "Andika";
+    font-weight: 500;
+    color: black;
+    background-color: var(--white-clr);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}

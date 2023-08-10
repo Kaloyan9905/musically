@@ -1,0 +1,39 @@
+#delete-head {
+  text-align: center;
+}
+
+#delete-head h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#delete-song {
+  margin-bottom: 20px;
+}
+
+#delete-form {
+  display: flex;
+  justify-content: center;
+}
+
+#delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#delete-btn:hover {
+  background-color: #c0392b;
+}
+

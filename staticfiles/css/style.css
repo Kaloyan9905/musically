@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto&display=swap');
+
+@import "common/typography.css";
+@import "common/home.css";
+@import "common/create.css";
+@import "common/catalog.css";
+@import "common/details.css";
+@import "common/404.css";
+@import "auth_css/start.css";
+@import "auth_css/login.css";
+@import "song/song.css";
+@import "song/music-upload.css";
+@import "song/upload-success.css";
+@import "song/list-songs.css";
+@import "song/edit-song.css";
+@import "song/delete.css";

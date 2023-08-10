@@ -1,0 +1,74 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    gap: 10px;
+    margin: 40px auto;
+    color: white;
+    text-align: center;
+}
+
+/* Hiding the original file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Styling the custom label as a button */
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Adding hover effect */
+.file-label:hover {
+    background-color: #2980b9;
+}
+
+/* Optional: Adding focus effect */
+.file-label:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3498db;
+}
+
+/* Optional: Adjusting font size and alignment */
+.file-label {
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/* Styling the upload button */
+.upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Adding hover effect */
+.upload-button:hover {
+  background-color: #219452;
+}
+
+/* Optional: Adding focus effect */
+.upload-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #27ae60;
+}
+
+/* Optional: Adjusting font size and alignment */
+.upload-button {
+  font-size: 16px;
+  text-align: center;
+}
+
